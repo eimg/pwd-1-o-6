@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+    <style>
+        .dashboard-shell {
+            min-height: calc(100vh - 72px);
+        }
+
+        .section-title {
+            color: #d9dee2;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: .02em;
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+        }
+
+        .location-card,
+        .data-card {
+            min-height: 305px;
+        }
+
+        .location-card .progress {
+            height: 5px;
+        }
+
+        .data-card .table > :not(caption) > * > * {
+            padding: .7rem .5rem;
+        }
+
+        .data-card .table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .dashboard-footer {
+            min-height: 72px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row g-0 dashboard-shell">
+            <div class="col-2 bg-light pe-2">
+                <h1 class="h3 text-center text-primary py-3">
+                    <i class="fa-solid fa-ghost"></i>
+                    <span class="d-none d-lg-inline">Ghost</span>
+                </h1>
+                <ul class="list-group mb-4 text-center text-lg-start">
+                    <li class="list-group-item active">
+                        <i class="fa-solid fa-home"></i>
+                        <span class="d-none d-lg-inline">Home</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="d-none d-lg-inline">Users</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-flag"></i>
+                        <span class="d-none d-lg-inline">Issues</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <span class="d-none d-lg-inline">Billing</span>
+                    </li>
+                </ul>
+
+                <ul class="list-group mb-4 text-center text-lg-start">
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-home"></i>
+                        <span class="d-none d-lg-inline">Home</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span class="d-none d-lg-inline">Users</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-flag"></i>
+                        <span class="d-none d-lg-inline">Issues</span>
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <span class="d-none d-lg-inline">Billing</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-10 bg-secondary">
+                <nav class="navbar bg-light navbar-expand">
+                    <div class="container-fluid">
+                        <div></div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa-solid fa-moon"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                    <i class="fa-solid fa-user-circle"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa-solid fa-user"></i>
+                                        Profile
+                                    </a>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fa-solid fa-sign-out"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid p-4">
+                    <div class="alert alert-info">
+                        A new version released!
+                    </div>
+
+                    <div class="row flex-column flex-lg-row">
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>Daily Users</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    1,024
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>Weekly Users</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    11,024
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>Monthly Users</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    81,024
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="bg-light p-4">
+                                <h3>Yearly Users</h3>
+                                <span class="text-success">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    111,024
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mt-1">
+                        <div class="col-12 col-xl-6">
+                            <h2 class="section-title">Location</h2>
+                            <div class="location-card bg-light rounded p-4">
+                                <div class="mb-4">
+                                    <p class="mb-2 text-secondary">Regional</p>
+                                    <div class="progress" role="progressbar" aria-label="Regional data" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-success" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="mb-2 text-secondary">Global</p>
+                                    <div class="progress" role="progressbar" aria-label="Global data" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-primary" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="mb-2 text-secondary">Local</p>
+                                    <div class="progress" role="progressbar" aria-label="Local data" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-warning" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="mb-2 text-secondary">Internal</p>
+                                    <div class="progress" role="progressbar" aria-label="Internal data" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar bg-danger" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-xl-6">
+                            <h2 class="section-title">Data</h2>
+                            <div class="data-card bg-light rounded p-4">
+                                <div class="d-flex justify-content-end gap-2 mb-1">
+                                    <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Search data">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Sort data">
+                                        <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm" type="button" aria-label="Filter data">
+                                        <i class="fa-solid fa-filter"></i>
+                                    </button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-light align-middle mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Age Group</th>
+                                                <th scope="col">Data</th>
+                                                <th scope="col">Progress</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>20-30</td>
+                                                <td>19%</td>
+                                                <td><i class="fa-solid fa-chart-pie" aria-label="Pie chart"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>30-40</td>
+                                                <td>40%</td>
+                                                <td><i class="fa-solid fa-chart-column" aria-label="Bar chart"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>40-50</td>
+                                                <td>20%</td>
+                                                <td><i class="fa-solid fa-chart-line" aria-label="Line chart"></i></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>&gt;50</td>
+                                                <td>11%</td>
+                                                <td><i class="fa-solid fa-chart-pie" aria-label="Pie chart"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="dashboard-footer d-flex align-items-center justify-content-center bg-white text-secondary">
+            &copy; Copyright 2020
+        </footer>
+    </div>
+</body>
+</html>
