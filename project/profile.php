@@ -36,7 +36,8 @@ $user = Auth::check();
             <li class="list-group-item">Address: <?= $user->address ?></li>
         </ul>
 
-        <a href="actions/logout.php" class="text-danger">Logout</a>
+        <a href="actions/logout.php" class="text-danger">Logout</a> |
+        <a href="admin.php">Admin</a>
     </div>
 </body>
 

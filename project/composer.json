@@ -1,6 +1,7 @@
 {
 	"require": {
-		"nesbot/carbon": "^3.13"
+		"nesbot/carbon": "^3.13",
+		"fakerphp/faker": "^1.24"
 	},
 	"autoload": {
 		"psr-4": {
