@@ -18,6 +18,8 @@
                         {{ $article->title }}
                     </h3>
                     <div>
+                        Category: <b>{{ $article->category->name }}</b>,
+                        Comments: <b>{{ count($article->comments) }}</b>,
                         {{ $article->created_at }}
                     </div>
                     <p>
