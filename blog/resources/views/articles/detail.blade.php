@@ -15,6 +15,7 @@
                     {{ $article->title }}
                 </h3>
                 <div>
+                    <b class="text-success">{{ $article->user->name }}</b>,
                     Category: <b>{{ $article->category->name }}</b>,
                     {{ $article->created_at }}
                 </div>
@@ -40,6 +41,7 @@
                         <a href="{{ url("/comments/delete/$comment->id") }}" class="btn-close float-end"></a>
                     @endauth
 
+                    <b class="text-success">{{ $comment->user->name }}</b> -
                     {{ $comment->content }}
                 </li>
             @endforeach

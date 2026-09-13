@@ -22,5 +22,15 @@ class DatabaseSeeder extends Seeder
         foreach ($list as $name) {
             \App\Models\Category::create(['name' => $name]);
         }
+
+        \App\Models\User::factory()->create([
+            "name" => "Alice",
+            "email" => "alice@gmail.com",
+        ]);
+
+        \App\Models\User::factory()->create([
+            "name" => "Bob",
+            "email" => "bob@gmail.com",
+        ]);
     }
 }
