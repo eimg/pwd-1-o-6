@@ -23,11 +23,11 @@
                     {{ $article->body }}
                 </p>
                 
-                @auth
+                @can("delete-article", $article)
                     <a href="{{ url("/articles/delete/$article->id") }}" class="btn btn-outline-danger btn-sm">
                         Delete
                     </a>
-                @endauth
+                @endcan
             </div>
         </div>
 
@@ -37,9 +37,9 @@
             </li>
             @foreach ($article->comments as $comment)
                 <li class="list-group-item">
-                    @auth
+                    @can("delete-comment", $comment)
                         <a href="{{ url("/comments/delete/$comment->id") }}" class="btn-close float-end"></a>
-                    @endauth
+                    @endcan
 
                     <b class="text-success">{{ $comment->user->name }}</b> -
                     {{ $comment->content }}
